@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Warfarin Tracker</title>
     <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:title" content="Warfarin Tracker" />
+    <meta
+      property="og:description"
+      content="Your trusted companion for tracking INR and Warfarin schedules."
+    />
+    <meta
+      property="og:image"
+      content="https://warfarintracker.com/assets/images/opengraph.png"
+    />
+    <meta property="og:url" content="https://warfarintracker.com/" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Warfarin Tracker" />
+    <meta
+      name="twitter:description"
+      content="Your trusted companion for tracking INR and Warfarin schedules."
+    />
+    <meta
+      name="twitter:image"
+      content="https://warfarintracker.com/assets/images/opengraph.png"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -21,10 +48,10 @@
     <!-- Hero Section -->
     <main>
       <section class="hero-section">
-        <div class="container">
+        <div class="hero-container">
           <div class="hero-content">
             <h1>
-              <span class="h1t">Warfarin Tracking </span>
+              <span class="h1t">Warfarin Monitoring</span>
               <span class="h2t">Made Simple</span>
             </h1>
             <p>
@@ -47,8 +74,10 @@
           </div>
           <div class="hero-image">
             <img
-              src="assets/images/phone.png"
+              src="/assets/images/phone.png"
               alt="Warfarin Tracker App Screenshot"
+              width="250"
+              height="536"
             />
           </div>
         </div>
@@ -60,18 +89,33 @@
           <h2>Features</h2>
           <div class="features-grid">
             <div class="feature-item">
-              <img src="assets/images/monitoring.png" class="feature-icon" />
+              <img
+                src="assets/images/monitoring.png"
+                class="feature-icon"
+                width="96"
+                height="96"
+              />
               <h3>Easy Tracking</h3>
 
               <p>Log your INR levels and dosages with just a few taps.</p>
             </div>
             <div class="feature-item">
-              <img src="assets/images/notifications.png" class="feature-icon" />
+              <img
+                src="assets/images/notifications.png"
+                class="feature-icon"
+                width="96"
+                height="96"
+              />
               <h3>Notifications</h3>
               <p>Get reminders to take your medication on time.</p>
             </div>
             <div class="feature-item">
-              <img src="assets/images/wifi_off.png" class="feature-icon" />
+              <img
+                src="assets/images/wifi_off.png"
+                class="feature-icon"
+                width="96"
+                height="96"
+              />
               <h3>Offline First</h3>
               <p>No internet? No problem. Your data stays with you.</p>
             </div>
@@ -79,6 +123,81 @@
         </div>
       </section>
 
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="accordion">
+            <!-- Question 1 -->
+            <div class="accordion-item">
+              <button class="accordion-header active">
+                Do I have to register for an account?
+              </button>
+              <div class="accordion-content" style="display: block">
+                <p>
+                  No, you don't. The app is designed to work offline without
+                  requiring an account.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Can I use the app to track multiple medications?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Currently, the app is optimized for tracking warfarin. Future
+                  updates may include support for additional medications.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                What happens if I uninstall the app?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Since your data is stored locally, uninstalling the app will
+                  delete all your records. Be sure to back up any important
+                  information before uninstalling.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                How do I set medication reminders?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  You can set reminders through the schedule feature. Once a
+                  schedule is created, notifications will prompt you to take
+                  your medication at the specified times.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Can I export my INR history?
+              </button>
+              <div class="accordion-content">
+                <p>
+                  At this time, exporting data is not supported. However, we are
+                  exploring this feature for future updates based on user
+                  feedback.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Download Section -->
       <section id="download" class="download-section">
         <h2>Download Now</h2>
@@ -102,5 +221,25 @@
     <footer>
       <p>&copy; 2024 Warfarin Tracker. All Rights Reserved.</p>
     </footer>
+    <script>
+      // FAQ Accordion Script
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          // Toggle active class
+          const isActive = header.classList.contains("active");
+          accordionHeaders.forEach((h) => {
+            h.classList.remove("active");
+            h.nextElementSibling.style.display = "none";
+          });
+
+          if (!isActive) {
+            header.classList.add("active");
+            header.nextElementSibling.style.display = "block";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
